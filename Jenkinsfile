@@ -13,7 +13,7 @@ node {
         sh 'echo "Tests passed"'
         sh 'pwd'
         echo 'Building docker image'
-        sh 'docker build . -t getTag:4'
+        sh 'docker build . -t gettag:4'
         app = /Applications/Docker.app/Contents/Resources/bin/docker.build("getintodevops/hellonode")
     }
 
