@@ -25,7 +25,7 @@ node {
     }
     stage('Push image'){
         echo 'Pushing image login first'
-        sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker login -u=ksaubhri -p=kalpesh482 https://registry.hub.docker.com'
+        sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker login --username=ksaubhri --password=kalpesh482'
         echo 'login successfull'
         sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker push ksaubhri/gettag'
         echo 'pushing successfull'
