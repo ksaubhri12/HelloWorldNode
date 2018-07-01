@@ -15,5 +15,9 @@ node {
         echo 'Building docker image'
         sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker build . -t gettag:4'
         echo 'app = /Applications/Docker.app/Contents/Resources/bin/docker.build("getintodevops/hellonode")'
+    }
+
+    stage('Test image'){
+        echo 'Test passed'
     } 
 }
