@@ -14,7 +14,7 @@ node {
         sh 'pwd'
         echo 'Building docker image'
         echo 'sudo /Applications/Docker.app/Contents/Resources/bin/docker build . -t gettag:4'
-        app = /Applications/Docker.app/Contents/Resources/bin/docker.build("getintodevops/hellonode")
+        app = docker.build("getintodevops/hellonode")
     }
 
     stage('Test image'){
