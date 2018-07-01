@@ -13,8 +13,8 @@ node {
         sh 'echo "Tests passed"'
         sh 'pwd'
         echo 'Building docker image'
-        echo 'sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker build . -t gettag:4''
-        app = sudo /Applications/Docker.app/Contents/Resources/bin/docker.build("getintodevops/hellonode")
+        sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker build . -t gettag:4'
+        echo 'app = /Applications/Docker.app/Contents/Resources/bin/docker.build("getintodevops/hellonode")'
     }
 
     stage('Test image') {
