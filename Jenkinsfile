@@ -13,7 +13,7 @@ node {
         sh 'echo "Tests passed"'
         sh 'pwd'
         sh 'echo $PATH'
-        sh 'export $PATH="$PATH:/usr/local/bin/docker"'
+        sh 'export PATH="$PATH:/usr/local/bin/docker"'
         sh 'echo $PATH'
         echo 'Building docker image'
         sh 'sudo /usr/local/bin/docker build . -t gettag:4'
