@@ -12,7 +12,7 @@ node {
          * docker build on the command line */
         sh 'echo "Tests passed"'
         sh 'pwd'
-        sh '$PATH'
+        sh 'echo $PATH'
         echo 'Building docker image'
         echo 'sudo /Applications/Docker.app/Contents/Resources/bin/docker build . -t gettag:4'
         app = docker.build("getintodevops/hellonode")
