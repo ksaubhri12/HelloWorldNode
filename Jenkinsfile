@@ -24,6 +24,7 @@ node {
         echo 'Pushing image login first'
         sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker login -u=ksaubhri -p=kalpesh482 https://registry.hub.docker.com'
         echo 'login successfull'
+        sh 'sudo docker login'
         sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker push ksaubhri/gettag'
         echo 'pushing successfull'
     } 
