@@ -19,5 +19,10 @@ node {
 
     stage('Test image'){
         echo 'Test passed'
+    }
+    stage('Push image'){
+        echo 'Pushing image login first'
+        sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker login -u=ksaubhri -p=kalpesh482 https://registry.hub.docker.com'
+        echo 'login successfull'
     } 
 }
