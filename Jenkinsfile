@@ -13,8 +13,8 @@ node {
         sh 'echo "Tests passed"'
         sh 'pwd'
         echo 'Building docker image'
-        sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker build . -t gettag:4'
-        echo 'app = /Applications/Docker.app/Contents/Resources/bin/docker.build("getintodevops/hellonode")'
+        echo 'sudo /Applications/Docker.app/Contents/Resources/bin/docker build . -t gettag:4'
+        app = /Applications/Docker.app/Contents/Resources/bin/docker.build("getintodevops/hellonode")
     }
 
     stage('Test image'){
@@ -24,7 +24,6 @@ node {
         echo 'Pushing image login first'
         sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker login -u=ksaubhri -p=kalpesh482 https://registry.hub.docker.com'
         echo 'login successfull'
-        sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker login'
         sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker push ksaubhri/gettag'
         echo 'pushing successfull'
     } 
