@@ -29,5 +29,16 @@ node {
         echo 'login successfull'
         sh 'sudo /Applications/Docker.app/Contents/Resources/bin/docker push ksaubhri/gettag'
         echo 'pushing successfull'
+    }
+    stage('deploying image'){
+        echo 'use docker machine for creating ec2 instance'
+        sh 'sudo /usr/local/bin/docker-machine create --driver amazonec2 --amazonec2-access-key AKIAJ3XF6C4DLQ4XBGVA --amazonec2-secret-key dUPPrOhoZkknIGd90sxzouE+3fKSrAxFWJxurUUx --amazonec2-region ap-south-1 aws-docker-sample-3'
+        echo 'instance created successfully'
+        echo 'activating docker machine'
+        sh 'sudo /usr/local/bin/docker-machine env aws-docker-sample-3'
+        sh 'eval $(sudo /usr/local/bin/docker-machine env aws-docker-sample-3)'
+        sh 'sudo /usr/local/bin/docker-machine ssh aws-docker-sample-3'
+        echo 'login successfully'
+        sh 'sudo docker run hello-world'
     } 
 }
